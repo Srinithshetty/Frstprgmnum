@@ -1,0 +1,38 @@
+import java.util.Random;
+import java.util.*;
+
+public class Numberguess
+
+{
+    public static void main(String args[])
+    {
+        Random rand=new Random();
+        int ranNo=rand.nextInt(100)+1;
+        Scanner sc=new Scanner(System.in);
+        //System.out.println("Random number is"+ranNo);
+        int trycount=0;
+        while(true)
+        {
+            System.out.println("Enter your guess (1-100) : ");
+
+            int playerguess=sc.nextInt();
+            trycount++;
+            if(playerguess == ranNo)
+            {
+                System.out.println("CORRECT ! You Win !");
+                System.out.println("It took you "+trycount+"tries");
+                break;
+            }
+            else if(ranNo > playerguess)
+            {
+                System.out.println("NOPE ! the number is higher.Guess again.");
+            }
+            else
+            {
+                System.out.println("NOPE ! the number is Lower.Guess again.");
+            }
+        }
+
+    }
+}
+
